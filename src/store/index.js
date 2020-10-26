@@ -79,15 +79,27 @@ export default new Vuex.Store({
     addToChart (state, payload){
       state.cart.push(Number(payload))
     },
+    removeFromCart(state, payload){
+      let indexToDelete = state.cart.indexOf(Number(payload))
+      state.cart.splice(indexToDelete, 1)
+    },
     decrementProductInventory(state, payload){
       let product = state.products.find(product => product.id === Number(payload))
       product.quantity--;
+    },
+    incrementProductInventory(state, payload){
+      let product  = state.products.find(product => product.id == Number(payload))
+      product.quantity++;
     }
   },
   actions: {
     addToChart({commit}, payload){
       commit('addToChart', payload)
       commit('decrementProductInventory',payload)
+    },
+    removeFromCart({commit}, payload){
+      commit('removeFromCart', payload)
+      commit('incrementProductInventory',payload)
     }
   },
   getters:{
