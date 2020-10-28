@@ -54,6 +54,11 @@
               <p>{{total}}</p>
           </li>
         </ul>
+       <button
+          :disabled="!this.selectedShippingOption"
+          class="btn btn--grey total-section__checkout-button">
+            Check out
+        </button>
       </section>
     </div>
   </div>
@@ -169,5 +174,8 @@ export default {
 .total-section__item__label{
     font-weight: bold;
     margin-right: 1rem;
+}
+.total-section__checkout-button{
+  width: 100%;
 }
 </style>

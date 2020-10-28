@@ -4,6 +4,7 @@
       <h1 class="flex-col--2">Online Store</h1>
       <div class="flex-col--2 nav-items">
         <router-link to="/" class="nav-items__item">Home</router-link>
+         <router-link to="/product-woman" class="nav-items__item">Woman</router-link>
         <router-link to="/cart" class="nav-items__item">
           Cart
           <counter-badge :count="cartCount"></counter-badge>

@@ -4,7 +4,7 @@
       <h2>Featured Items</h2>
       <ul class="featured-items">
         <li
-          class="featured-item__item"
+          class="featured-items__item"
           v-for="product in products"
           :key="product.id"
         >
@@ -28,6 +28,9 @@ export default {
     products() {
       return this.$store.state.products;
     },
+    featuredProducts: function(){
+      return this.$store.getters.featuredProducts;
+    }
   },
   methods: {
     imagePath(product) {
@@ -47,25 +50,29 @@ export default {
     text-align: center;
   }
 }
-.featured-items {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  @media only screen and (max-width: 832px) {
-    flex-direction: column;
-  }
+.featured-items{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
-.featured-items__item {
-  width: 33%;
-  text-align: center;
-  @media only screen and (max-width: 832) {
-    width: 100%;
-  }
+.featured-items__item{
+  margin: 1rem;
+}
+.product-image{
+   width: 250px;
+  height: 400px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backface-visibility: hidden;
 }
 .product-image {
   max-height: 200px;
-  max-width: 100px;
 }
 .product-title {
   font-weight: bold;
