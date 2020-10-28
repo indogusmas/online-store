@@ -37,17 +37,29 @@ export default {
 
 <style scoped>
 .featured-items{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .featured-items__item{
-  margin: 1rem;
+ box-sizing: border-box;
+  text-align: center;
+  padding: 1rem;
+  flex: 0 0 33.3%;
+  @media only screen and (max-width: 832px) {
+    flex: 0 0 50%;
+  }
+  @media only screen and (max-width: 475px) {
+    flex: 0 0 100%;
+  }
 }
 .product-image{
-   width: 250px;
-  height: 400px;
-  border-radius: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   display: flex;

@@ -316,27 +316,7 @@ export default new Vuex.Store({
           "dress-4.jpg"
         ]
       },
-      {
-        "name": "Dress-4",
-        "id": 15,
-        "price": 21.5,
-        "featured": false,
-        "women": true,
-        "color": "red",
-        "size": "Large",
-        "gender": "women",
-        "quantity": 20,
-        "dateAdded": "Tue Mar 2020",
-        "category": "Shoes",
-        "detail": {
-          "material": "Cotton",
-          "fit": "regular",
-          "maintance": "machine"
-        },
-        "images": [
-          "dress-1.jpg"
-        ]
-      },
+     
 
 
     ]
